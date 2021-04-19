@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.fongfuse.githubdemo.base.BaseActivity
 import com.fongfuse.githubdemo.data.BaseResponse
 import com.fongfuse.githubdemo.databinding.ActivityMainBinding
-import com.fongfuse.githubdemo.extension.setScrollListenerLoadMore
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -24,9 +23,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val items = ArrayList<BaseResponse?>()
 
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    override fun getViewBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
