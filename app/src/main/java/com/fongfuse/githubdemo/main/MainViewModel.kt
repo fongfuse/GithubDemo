@@ -31,4 +31,6 @@ class MainViewModel constructor(private val repository: GithubRepository) : Base
 
     }
 
+    fun itemsIsEmpty(): Boolean = (_items.value.isNullOrEmpty())
+
 }
